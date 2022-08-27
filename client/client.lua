@@ -1,6 +1,6 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
-print("MADE WITH LOVE BY KBFW LABS..")
+--print("MADE WITH LOVE BY KBFW LABS..")
 
 -----------------------/////////////////////time function///////////////--------------------
 
@@ -36,7 +36,6 @@ AddEventHandler("kbfw-plate:removePlate", function()
             if result then
                 exports['ps-ui']:Circle(function(success)
                     if success then
-        
                     QBCore.Functions.Progressbar("plateremove", "Removing Plate..", math.random(7500, 12000), false, true, {
                         disableMovement = true,
                         disableCarMovement = true,
@@ -58,14 +57,14 @@ AddEventHandler("kbfw-plate:removePlate", function()
                           DeleteEntity(screw2)
                         DeleteEntity(screw)
                        
-                        QBCore.Functions.Notify("Process Cancele", "error")
+                        QBCore.Functions.Notify("Process Canceled", "error")
                         DeleteEntity(screw2)
                         DeleteEntity(screw)
                     end)
                 else
                     QBCore.Functions.Notify("You Failed MotherFuker", "error")
                     exports['ps-dispatch']:SuspiciousActivity()
-                    print("fail")
+                    --print("fail")
                     DeleteEntity(screw2)
                     DeleteEntity(screw)
                 end
@@ -105,7 +104,7 @@ AddEventHandler('kbfw-plate:installPlate', function(data)
                 exports['ps-ui']:Circle(function(success)
                     if success then
         
-                        print("success")
+                --        print("success")
                 QBCore.Functions.Progressbar("installing", "Checking plate..", math.random(7500, 12000), false, true, {
                     disableMovement = true,
                     disableCarMovement = true,
@@ -131,7 +130,7 @@ AddEventHandler('kbfw-plate:installPlate', function(data)
                         ClearPedTasks(PlayerPedId())
                         SetVehicleNumberPlateText(vehicle, data)
                         TriggerServerEvent('kbfw-plate:takePlate')
-                        TriggerServerEvent('kbfw-plate:addPlate', plate)
+                        --TriggerServerEvent('kbfw-plate:addPlate', plate)
                     end, function() -- Cancel
                         DeleteEntity(plateprop2)
                         DeleteEntity(plateprop)
@@ -144,13 +143,12 @@ AddEventHandler('kbfw-plate:installPlate', function(data)
                     ClearPedTasks(PlayerPedId())
                     QBCore.Functions.Notify("Process Canceled", "error")
                 end)
-
             else
                 QBCore.Functions.Notify("You Failed MotherFuker", "error")
                 ClearPedTasks(PlayerPedId())
                 DeleteEntity(plateprop2)
                 DeleteEntity(plateprop)
-                print("fail")
+                --print("fail")
             end
         end, 2, 20)
 
@@ -162,5 +160,3 @@ AddEventHandler('kbfw-plate:installPlate', function(data)
         QBCore.Functions.Notify('No vehicle nearby', "error", 2500)
     end
 end)
-
-
