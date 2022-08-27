@@ -1,5 +1,5 @@
 local QBCore = exports['qb-core']:GetCoreObject()
-print("MADE WITH LOVE BY KBFW LABS..")
+--print("MADE WITH LOVE BY KBFW LABS..")
 RegisterServerEvent('kbfw-plate:addPlate', function(data)
     local Player = QBCore.Functions.GetPlayer(source)
     info = {
@@ -33,7 +33,3 @@ QBCore.Functions.CreateUseableItem("license_plate", function(source, item)
         TriggerClientEvent('kbfw-plate:installPlate', source, item.info.plate)
     end
 end)
-
-
-
-
