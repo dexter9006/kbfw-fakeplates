@@ -34,8 +34,8 @@ AddEventHandler("kbfw-plate:removePlate", function()
             screw2 = CreateObject(screw, pedPos, true)
             AttachEntityToEntity(screw2, ped, bone, 0.1, 0.04, 0, 80.0, 120.0, 160.0, true, true, false, true, 1, true)
             if result then
-                exports['ps-ui']:Circle(function(success)
-                    if success then
+                --exports['ps-ui']:Circle(function(success)
+                    --if success then
                     QBCore.Functions.Progressbar("plateremove", "Removing Plate..", math.random(7500, 12000), false, true, {
                         disableMovement = true,
                         disableCarMovement = true,
@@ -61,14 +61,14 @@ AddEventHandler("kbfw-plate:removePlate", function()
                         DeleteEntity(screw2)
                         DeleteEntity(screw)
                     end)
-                else
-                    QBCore.Functions.Notify("You Failed MotherFuker", "error")
-                    exports['ps-dispatch']:SuspiciousActivity()
+                --else
+                    --QBCore.Functions.Notify("You Failed MotherFuker", "error")
+                    --exports['ps-dispatch']:SuspiciousActivity()
                     --print("fail")
-                    DeleteEntity(screw2)
-                    DeleteEntity(screw)
-                end
-            end, 2, 20)
+                    --DeleteEntity(screw2)
+                    --DeleteEntity(screw)
+                --end
+            --end, 2, 20)
                     
             else
                 QBCore.Functions.Notify("You don\'t have the right tools.", "error")
@@ -101,8 +101,8 @@ AddEventHandler('kbfw-plate:installPlate', function(data)
             plateprop2 = CreateObject(plateprop, pedPos, true)
             AttachEntityToEntity(plateprop2, ped, bone, 0.1, 0.04, 0, 80.0, 120.0, 160.0, true, true, false, true, 1, true)
             if result then
-                exports['ps-ui']:Circle(function(success)
-                    if success then
+                --exports['ps-ui']:Circle(function(success)
+                    --if success then
         
                 --        print("success")
                 QBCore.Functions.Progressbar("installing", "Checking plate..", math.random(7500, 12000), false, true, {
@@ -143,14 +143,14 @@ AddEventHandler('kbfw-plate:installPlate', function(data)
                     ClearPedTasks(PlayerPedId())
                     QBCore.Functions.Notify("Process Canceled", "error")
                 end)
-            else
-                QBCore.Functions.Notify("You Failed MotherFuker", "error")
-                ClearPedTasks(PlayerPedId())
-                DeleteEntity(plateprop2)
-                DeleteEntity(plateprop)
+            --else
+                --QBCore.Functions.Notify("You Failed MotherFuker", "error")
+                --ClearPedTasks(PlayerPedId())
+                --DeleteEntity(plateprop2)
+                --DeleteEntity(plateprop)
                 --print("fail")
-            end
-        end, 2, 20)
+            --end
+        --end, 2, 20)
 
             else
                 QBCore.Functions.Notify("You don\'t have the right tools.", "error")
